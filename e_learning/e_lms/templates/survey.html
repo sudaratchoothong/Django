@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block navigationbar %}
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="/list_class">Class</a></li>
+<li class="nav-item"><a class="nav-link active" href="/survey">Survey</a></li>
+{% endblock %} {% block content %}
+<br>
+<br>
+<center>
+    <h2> แบบสำรวจความพึงพอใจในการใช้บริการ </h2>
+</center>
+<hr>
+<form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button class="button" type="submit">ส่งข้อมูล</button>
+</form>
+{% endblock %}

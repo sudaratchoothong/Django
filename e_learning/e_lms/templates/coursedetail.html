@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block navigationbar %}
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item"><a class="nav-link active" href="/list_class">Class</a></li>
+<li class="nav-item"><a class="nav-link" href="/survey">Survey</a></li>
+{% endblock %} {% block content %}
+<br>
+<br>
+<center>
+    <h2> รายวิชา {{ subject_ID }} {{ subject_name }} </h2>
+    <h3> รายการเอกสารที่แขวนอยู่มีดังนี้ </h3>
+</center>
+<hr>
+<ul align=left>
+    {% for material in material_list %}
+    <li><a href="/download?f={{ material.file }}">{{ material.material_name }}</a> <br> วัน-เวลาที่นำเข้าระบบ: {{ material.upload_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

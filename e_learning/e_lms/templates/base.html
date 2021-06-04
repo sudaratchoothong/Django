@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>E-Learnng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.min.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: var(--bs-teal);">
+        <div class="container"><a class="navbar-brand" href="#" style="color: var(--bs-dark);">E-Learning Platform by GoingPro Corp</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    {% block navigationbar %}
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Class</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Survey</a></li>
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    {% block content %}
+                    <div class="intro">
+                        <h1 class="text-center">Welcome to E-Learning Platform</h1>
+                    </div>
+                    <div class="text">
+                        <h2> <img src="{% static 'assets/img/beach.jpg' %}" width="320"></h2>
+                        <figure class="figure d-block">
+                            <figcaption class="figure-caption"></figcaption>
+                        </figure>
+                    </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-clean">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 item social">
+                    <p class="copyright">Going Pro Corp @ 2021</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
